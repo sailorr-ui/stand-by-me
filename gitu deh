@@ -1,0 +1,38 @@
+<div align="center">
+  <!-- Window Molekul -->
+  <div style="background-color: black; border-radius: 5px; border: solid 2px blue; width: 360px;" align="center">
+    <div>
+      <b><span style="color: yellow;">Molecular Viewer</span></b>
+      
+      <!-- Load JSmol dari chemapps.stolaf.edu -->
+      <script src="https://chemapps.stolaf.edu/jmol/jmol.php?model=water&caption=Air (H2O)&inline&width=320&height=320;set antialiasDisplay on;frank off" type="text/javascript"></script>
+
+      <!-- Dropdown Molekul -->
+      <div style="background-color: blue; color:white; padding:5px;">
+        <b>Pilih Molekul:</b>
+        <script>
+          jmolMenu([
+            ["load https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/962/SDF", "Air (H2O)","selected"],
+            ["load https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/887/SDF", "Metanol","selected"],
+            ["load https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/702/SDF", "Etanol","selected"],
+            ["load https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/2519/SDF", "Kafein","selected"],
+            ["load https://files.rcsb.org/download/1CRN.pdb", "Protein (Crambin)","selected"]
+          ],1);
+        </script>
+      </div>
+
+      <!-- Kontrol -->
+      <div style="padding:5px; background:#eee;">
+        <script>
+          jmolCheckbox("spin on", "spin off", "Spin");
+          jmolButton("spacefill on; wireframe off", "Spacefill");
+          jmolButton("spacefill off; wireframe 0.15", "Ball & Stick");
+          jmolButton("wireframe 0.15", "Wireframe");
+          jmolButton("cpk 25", "CPK");
+          jmolButton("zoom 150", "Zoom In");
+          jmolButton("zoom 100", "Reset Zoom");
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
